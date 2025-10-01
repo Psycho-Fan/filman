@@ -1,0 +1,7 @@
+{
+  "cookies": {
+    "PHPSESSID": "your_session_id",
+    "user_id": "your_user_id"
+  },
+  "theme": "dark"
+}

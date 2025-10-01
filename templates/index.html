@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="results">
+  {% for item in results %}
+    <div class="movie-card">
+      <a href="/movie?url={{ item.url }}">
+        <img src="{{ item.img }}" alt="{{ item.title }}">
+        <div class="title">{{ item.title }}</div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

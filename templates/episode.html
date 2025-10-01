@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ title }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>{{ title }}</h1>
+        <a href="javascript:history.back()">&larr; Back</a>
+    </header>
+
+    {% if links %}
+    <div class="iframe-links">
+        {% for link in links %}
+        <a href="{{ link.url }}" target="_blank">{{ link.host }}</a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No streaming links found.</p>
+    {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ movie_title }}</h1>
+{% for season, eps in episodes.items() %}
+<div class="season">
+  <h2>{{ season }}</h2>
+  <div class="episodes">
+    {% for ep in eps %}
+      <button class="episode-btn" data-url="{{ ep.url }}">{{ ep.title }}</button>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+<div id="service-frame"></div>
+{% endblock %}

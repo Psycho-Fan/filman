@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="{{ theme }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filman.cc Viewer</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">Filman Viewer</div>
+  <div class="search-bar">
+    <form method="GET" action="/">
+      <input type="text" name="q" placeholder="Search movies/series..." value="{{ query or '' }}">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <div class="settings">
+    ⚙
+    <div class="settings-menu">
+      <div class="theme-toggle">
+        <label>Dark/Light Theme</label>
+        <button id="toggle-theme">Toggle</button>
+      </div>
+      <div class="cookies-update">
+        <label>Update Cookies</label>
+        <input type="text" id="cookie-id" placeholder="User ID" value="{{ cookies['user_id'] }}">
+        <input type="text" id="cookie-sess" placeholder="PHPSESSID" value="{{ cookies['PHPSESSID'] }}">
+        <button id="update-cookies">Update</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<main>
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>
